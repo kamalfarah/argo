@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  type: {{ .values.service.type }}
+  type: NodePort
   ports:
-    - port: {{ .values.service.port }}
+    - port: 80
       targetPort: 80
   selector:
     app: nginx

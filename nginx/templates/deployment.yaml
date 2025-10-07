@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: {{ .values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: "{{ .values.image.repository }}:{{ .values.image.tag }}"
+          image: kamalfarah/argo:v1.0
           ports:
             - containerPort: 80
