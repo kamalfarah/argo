@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kamalfarah/argo
+    argocd-image-updater.argoproj.io/image-list: argo=kamalfarah/argo
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/argo.update-strategy: latest
     argocd-image-updater.argoproj.io/argo.allow-tags: regexp:^\d+$
@@ -21,6 +21,7 @@ spec:
     namespace: default
   syncPolicy:
     automated: {}
+
 
 
 
