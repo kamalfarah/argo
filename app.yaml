@@ -4,6 +4,10 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: kamalfarah/argo
     argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/hello-nginx.update-strategy: latest
+    argocd-image-updater.argoproj.io/hello-nginx.allow-tags: regexp:^\d+$
+    
+    argocd-image-updater.argoproj.io/git-branch: main
   name: nginx
   namespace: argocd
 spec:
@@ -17,4 +21,5 @@ spec:
     namespace: default
   syncPolicy:
     automated: {}
+
 
