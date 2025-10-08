@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kamalfarah/argo.git
+    repoURL: git@github.com:kamalfarah/argo.git
     path: nginx
     targetRevision: HEAD
   destination:
@@ -17,3 +17,4 @@ spec:
     namespace: default
   syncPolicy:
     automated: {}
+
