@@ -2,6 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: argo=kamalfarah/argo
+    argocd-image-updater.argoproj.io/hello-nginx.update-strategy: latest
+    argocd-image-updater.argoproj.io/hello-nginx.allow-tags: regexp:^\d+$
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+
 spec:
   replicas: 1
   selector:
@@ -17,3 +24,4 @@ spec:
           image: kamalfarah/argo:v1.0
           ports:
             - containerPort: 80
+
