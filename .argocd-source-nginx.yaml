@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - kamalfarah/argo:v1.1
